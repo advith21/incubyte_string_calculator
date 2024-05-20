@@ -22,6 +22,10 @@ RSpec.describe StringCalculator do
             it "Should allow the calculator to handle new lines between numbers " do
                 expect(described_class.add("2\n3")).to eq(5)
             end
+                        
+            it "Should allow the calculator to handle new lines and comma between numbers " do
+                expect(described_class.add("2\n3,1")).to eq(6)
+            end
         end
     end
 end
