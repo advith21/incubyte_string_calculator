@@ -3,10 +3,20 @@ class StringCalculator
     return 0 if string_number.empty?
 
     numbers_list = extract_numbers(string_number)
+    negative_numbers = []
     sum = 0
+
     numbers_list.each do |number|
-      sum += number.to_i
+      int_number = number.to_i
+      if int_number < 0
+        negative_numbers << int_number
+      else
+        sum += int_number
+      end
     end
+
+    raise ArgumentError, "Negatives not allowed: #{negative_numbers.join(', ')}" unless negative_numbers.empty?
+
     sum
   end
 
