@@ -18,6 +18,10 @@ RSpec.describe StringCalculator do
             it "Should allow the calculator to add unknown amount of numbers" do
                 expect(described_class.add("1,4,6,8,10")).to eq(29)
             end
+            
+            it "Should allow the calculator to handle new lines between numbers " do
+                expect(described_class.add("2\n3")).to eq(5)
+            end
         end
     end
 end
