@@ -4,8 +4,9 @@ class StringCalculator
 
     return string_number.to_i if string_number.length == 1
 
+    numbers_list = string_number.split(/,(?!\n)|\n/)
     sum = 0
-    string_number.split(',').each do |number|
+    numbers_list.each do |number|
         sum += number.to_i
     end
     sum
