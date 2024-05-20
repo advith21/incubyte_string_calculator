@@ -10,6 +10,10 @@ RSpec.describe StringCalculator do
             it "Should return the same number if string contains single number" do
                 expect(described_class.add("1")).to eq(1)
             end
+
+            it "Should add the numbers if string contains two numbers" do
+                expect(described_class.add("3,6")).to eq(9)
+            end
         end
     end
 end
