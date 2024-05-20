@@ -14,6 +14,10 @@ RSpec.describe StringCalculator do
             it "Should add the numbers if string contains two numbers" do
                 expect(described_class.add("3,6")).to eq(9)
             end
+
+            it "Should allow the calculator to add unknown amount of numbers" do
+                expect(described_class.add("1,4,6,8,10")).to eq(29)
+            end
         end
     end
 end
