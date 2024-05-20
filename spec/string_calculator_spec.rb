@@ -19,15 +19,15 @@ RSpec.describe StringCalculator do
         expect(described_class.add("1,4,6,8,10")).to eq(29)
       end
       
-      it "Should allow the calculator to handle new lines between numbers" do
+      it "Should allow new lines between numbers" do
         expect(described_class.add("2\n3")).to eq(5)
       end
                   
-      it "Should allow the calculator to handle new lines and comma between numbers" do
+      it "Should allow new lines and comma between numbers" do
         expect(described_class.add("2\n3,1")).to eq(6)
       end
 
-      it "Should allow the calculator to allow different delimiters " do
+      it "Should allow different delimiters" do
         expect(described_class.add("//;\n6;2")).to eq(8)
       end
     end
