@@ -4,7 +4,13 @@ class StringCalculator
 
     return string_number.to_i if string_number.length == 1
 
-    numbers_list = string_number.split(/,(?!\n)|\n/)
+    if string_number.start_with?("//")
+      new_delimiter = string_number.split(/\/\/|\n/)[1]
+      delimiter = "\n|#{new_delimiter}"
+      numbers_list = string_number.split(Regexp.new(delimiter))[2..-1]
+    else 
+      numbers_list = string_number.split(/,(?!\n)|\n/) 
+    end
     sum = 0
     numbers_list.each do |number|
       sum += number.to_i
