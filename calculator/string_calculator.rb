@@ -7,7 +7,7 @@ class StringCalculator
     numbers_list = string_number.split(/,(?!\n)|\n/)
     sum = 0
     numbers_list.each do |number|
-        sum += number.to_i
+      sum += number.to_i
     end
     sum
   end
