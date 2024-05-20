@@ -8,6 +8,8 @@ class StringCalculator
 
     numbers_list.each do |number|
       int_number = number.to_i
+      next if int_number > 1000
+
       if int_number < 0
         negative_numbers << int_number
       else
