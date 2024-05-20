@@ -34,7 +34,7 @@ RSpec.describe StringCalculator do
 
     context "Invalid calculatinos" do
       it "Should not allow negative numbers" do
-        expect(described_class.add("3,-2")).to raise_error
+        expect(described_class.add("3,-2")).to raise_error(ArgumentError, "Negatives not allowed: -2")
       end
     end
   end
